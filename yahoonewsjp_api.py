@@ -1,8 +1,7 @@
-import requests
-from bs4 import BeautifulSoup
 from typing import Tuple
 import threading
 from article import Article
+from get_url_soup import get_url_soup
 
 class YahooNewsArticle(Article):
 
@@ -59,16 +58,6 @@ class YahooNewsArticle(Article):
             text = "(Article text missing, please visit the article URL.)"
         return full_title, text.replace("\n\n", "\n")
 
-def get_url_soup(url):
-    return BeautifulSoup(requests.get(url).content, 'lxml')
-
-def article_to_articledict(article):
-    return {
-        "title": article.title,
-        "content": article.content.replace("\n\n", "\n") if article.content else "",
-        "url": article.url if article.url else ""
-    }
-
 base_url = "https://news.yahoo.co.jp/"
 
 def get_n_yahoonews_jp_top_articles(n=8):
@@ -77,10 +66,6 @@ def get_n_yahoonews_jp_top_articles(n=8):
     topics = home_soup.find(class_="topics")
     top_articles_items = topics.find_all(attrs={"data-ual-view-type":"list"})[:n]
     articles = [YahooNewsArticle(short_title = article_item.getText(), digest_url = article_item.next_element.attrs["href"]) for article_item in top_articles_items]
-    for article in articles:
-        article.thread.start()
-    # for article in articles:
-    #     article.thread.join()
     return articles
     
 if __name__ == "__main__":

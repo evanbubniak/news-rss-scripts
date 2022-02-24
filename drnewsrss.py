@@ -3,7 +3,7 @@ from typing import Optional
 import requests
 from xml.etree.ElementTree import ElementTree, fromstring, Element
 from article import Article
-from yahoonewsjp_api import get_url_soup
+from get_url_soup import get_url_soup
 from sys import argv
 from io import StringIO
 import threading
@@ -13,11 +13,12 @@ class DRNewsArticle(Article):
     def __init__(self, feed_name = None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.feed_name = feed_name
-        # self.thread = threading.Thread(target=self.retrieve_content)
+        self.thread = threading.Thread(target=self.retrieve_content)
+        self.thread.start()
 
     def get_content(self):
-        # if not self.content:
-        #     self.thread.join()
+        if not self.content:
+            self.thread.join()
         return self.content
 
     def retrieve_content(self):
@@ -30,7 +31,6 @@ class DRNewsArticle(Article):
 
         if body_tag:
             text = "<p>" + "</p><p>".join([text_tag.getText() for text_tag in body_tag.find_all(class_ ="dre-speech")]) + "</p>"
-            # text = text_tag.getText()
         else:
             text = "(Article text missing, please visit the article URL.)"
         self.content = text
@@ -59,9 +59,6 @@ if channel:
     articles = [DRNewsArticle(feed_name = feed_name, url = get_item_link(item), short_title = get_item_title(item)) for item in items]
     if article_limit is not None:
         articles = articles[:article_limit]
-    for article in tqdm(articles):
-        article.retrieve_content()
-        # article.thread.start()
     for item, article in tqdm(zip(items, articles), total = len(items)):
         link = item.find("link")
         description = item.find("description")
