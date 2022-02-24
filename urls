@@ -2,6 +2,6 @@ https://www.lemonde.fr/jeux-video/rss_full.xml
 https://rss.sueddeutsche.de/rss/Topthemen
 https://www.lemonde.fr/rss/une.xml
 https://rss.nhnieuws.nl/rss
-"exec:/home/bubsy/Documents/programming/news-rss-scripts/drnewsrss.py senestenyt"
-"exec:/home/bubsy/Documents/programming/news-rss-scripts/drnewsrss.py politik"
-"exec:/home/bubsy/Documents/programming/news-rss-scripts/yahoonewsrss.py topics/it.xml"
+"exec:~/Documents/programming/news-rss-scripts/drnewsrss.py senestenyt"
+"exec:~/Documents/programming/news-rss-scripts/drnewsrss.py politik"
+"exec:~/Documents/programming/news-rss-scripts/yahoonewsrss.py topics/it.xml"
