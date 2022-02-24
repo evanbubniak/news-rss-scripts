@@ -4,4 +4,6 @@ https://www.lemonde.fr/rss/une.xml
 https://rss.nhnieuws.nl/rss
 "exec:~/Documents/programming/news-rss-scripts/drnewsrss.py senestenyt"
 "exec:~/Documents/programming/news-rss-scripts/drnewsrss.py politik"
-"exec:~/Documents/programming/news-rss-scripts/yahoonewsrssjp.py topics/it.xml"
+"exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/top-picks.xml"
+"exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/it.xml"
+"exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/world.xml"
