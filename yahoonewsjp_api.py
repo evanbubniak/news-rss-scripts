@@ -5,8 +5,9 @@ from get_url_soup import get_url_soup
 
 class YahooNewsArticle(Article):
 
-    def __init__(self, digest_url = None, *args, **kwargs):
+    def __init__(self, digest_url = None, incl_date_in_content = True, *args, **kwargs):
         self.digest_url = digest_url
+        self.incl_date_in_content = incl_date_in_content
         super().__init__(*args, **kwargs)
         self.thread = threading.Thread(target=self.set_url_and_get_content)
         self.thread.start()
@@ -21,10 +22,10 @@ class YahooNewsArticle(Article):
             self.thread.join()
         return self.title
 
-    def get_content(self, incl_date = True):
+    def get_content(self):
         if not self.content:
             self.thread.join()
-        return self.date_repr + self.content if incl_date else self.content
+        return self.date_repr + self.content if self.incl_date_in_content else self.content
 
     def get_digest_text(self) -> str:
         digest_soup = get_url_soup(self.digest_url)
