@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
 from typing import Optional
-from article import Article
+from article import Article, RSSArticle
 from convert_and_print_rss import convert_and_print_rss
 from get_url_soup import get_url_soup
 from sys import argv
 import threading
 
-class DRNewsArticle(Article):
+class DRNewsArticle(RSSArticle):
     def __init__(self, feed_name = None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.feed_name = feed_name
         self.thread = threading.Thread(target=self.retrieve_content)
         self.thread.start()
-
-    def get_content(self):
-        if not self.content:
-            self.thread.join()
-        return self.content
 
     def retrieve_content(self):
         soup = get_url_soup(self.url)
