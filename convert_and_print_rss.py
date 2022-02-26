@@ -1,12 +1,11 @@
 from typing import Callable, Optional
 import requests
 from xml.etree.ElementTree import ElementTree, fromstring, Element
-from bs4 import Tag
 from article import Article
 from io import StringIO
 from tqdm import tqdm
 
-def convert_and_print_rss(target_url: str, article_limit: Optional[int], item_to_article: Callable[[Tag], Article]):
+def convert_and_print_rss(target_url: str, article_limit: Optional[int], item_to_article: Callable[[Element], Article]):
     response = requests.get(target_url)
     root = fromstring(response.content)
     channel = root.find("channel")
@@ -14,6 +13,8 @@ def convert_and_print_rss(target_url: str, article_limit: Optional[int], item_to
         items = channel.findall("item")
         articles = [item_to_article(item) for item in items]
         if article_limit is not None:
+            for item in items[article_limit:]:
+                channel.remove(item)
             articles = articles[:article_limit]
 
         for item, article in tqdm(zip(items, articles), total = len(items)):
