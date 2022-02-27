@@ -1,4 +1,3 @@
-auto-reload yes
 max-items 50
 bind-key j down article
 bind-key k up article
