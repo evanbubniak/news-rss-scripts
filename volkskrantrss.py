@@ -8,7 +8,8 @@ from bs4 import Tag
 
 
 def is_article_text(tag: Tag) -> bool:
-    return "artstyle__intro" in tag.get_attribute_list("class") or "artstyle__paragraph" in tag.get_attribute_list("class") or "artstyle__title" in tag.get_attribute_list("class")
+    article_text_classes = ["artstyle__intro", "artstyle__paragraph", "artstyle__title", "block-text", "block-lead"]
+    return any(article_text_class in tag.get_attribute_list("class") for article_text_class in article_text_classes)
 
 def convert_tag_to_text(text_tag: Tag) -> str:
     if text_tag.name in ["ul", "ol"]:
@@ -24,7 +25,7 @@ class VolkskrantArticle(RSSArticle):
         body_tag = soup.find("article")
         if body_tag:
             main_texts = [convert_tag_to_text(text_tag) for text_tag in body_tag.find_all(is_article_text)]
-            text = "<p>" + "</p><p>".join(main_texts) + "</p>"
+            text = "<p>" + "</p><p>".join(main_texts    ) + "</p>"
         else:
             text = "(Article text missing, please visit the article URL.)"
         self.content = text.replace("\n", "")
