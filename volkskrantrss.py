@@ -8,7 +8,7 @@ from bs4 import Tag
 
 
 def is_article_text(tag: Tag) -> bool:
-    article_text_classes = ["artstyle__intro", "artstyle__paragraph", "artstyle__title", "block-text", "block-lead"]
+    article_text_classes = ["artstyle__intro", "artstyle__paragraph", "artstyle__title", "block-text", "block-lead", "block-chapter"]
     return any(article_text_class in tag.get_attribute_list("class") for article_text_class in article_text_classes)
 
 def convert_tag_to_text(text_tag: Tag) -> str:
