@@ -1,11 +1,14 @@
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py rss/une.xml" fr
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py jeux-video/rss_full.xml" fr
 "exec:~/Documents/programming/news-rss-scripts/szrss.py https://rss.sueddeutsche.de/rss/Topthemen" de
+"exec:~/Documents/programming/news-rss-scripts/dwrss.py xml/rss-de-all" de
+"exec:~/Documents/programming/news-rss-scripts/corrieredellaserarss.py http://xml2.corriereobjects.it/rss/homepage.xml" it
 https://rss.nhnieuws.nl/rss nl
 "exec:~/Documents/programming/news-rss-scripts/volkskrantrss.py nieuws-achtergrond/rss.xml" nl
 "exec:~/Documents/programming/news-rss-scripts/drnewsrss.py senestenyt" da
 "exec:~/Documents/programming/news-rss-scripts/drnewsrss.py politik" da
+"exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8662" "~過去24小時" zh
+"exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8663" "~政經角力" zh
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/top-picks.xml" ja
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/it.xml" ja
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/world.xml" ja
-"exec:~/Documents/programming/news-rss-scripts/dwrss.py xml/rss-de-all" de
