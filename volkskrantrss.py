@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-from typing import Optional
-from article import Article, RSSArticle
-from sys import argv
+from article import RSSArticle
 from convert_and_print_rss import convert_and_print_rss
 from get_url_soup import get_url_soup
 from bs4 import Tag
@@ -25,25 +23,12 @@ class VolkskrantArticle(RSSArticle):
         body_tag = soup.find("article")
         if body_tag:
             main_texts = [convert_tag_to_text(text_tag) for text_tag in body_tag.find_all(is_article_text)]
-            text = "<p>" + "</p><p>".join(main_texts    ) + "</p>"
+            text = "<p>" + "</p><p>".join(main_texts) + "</p>"
         else:
             text = "(Article text missing, please visit the article URL.)"
         self.content = text.replace("\n", "")
 
 base_url = "https://www.volkskrant.nl/"
-feed_name: str = argv[1] if len(argv) >= 2 else "voorpagina/rss.xml"
-article_limit: Optional[int] = int(argv[2]) if len(argv) >= 3 else None
-target_url = base_url + feed_name
+default_feed_name: str = "voorpagina/rss.xml"
 
-def get_item_link(item) -> str:
-    link = item.find("link")
-    return "" if link is None else link.text
-
-def get_item_title(item) -> str:
-    title = item.find("title")
-    return "" if title is None else title.text
-
-def item_to_article(item) -> Article:
-    return VolkskrantArticle(url = get_item_link(item), title = get_item_title(item), use_threads=True)
-
-convert_and_print_rss(target_url, article_limit, item_to_article)
+convert_and_print_rss(base_url, default_feed_name, VolkskrantArticle)

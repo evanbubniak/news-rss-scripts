@@ -24,6 +24,15 @@ class Article:
     def get_url(self) -> str:
         return self.url
 
+
+def get_item_link(item) -> str:
+    link = item.find("link")
+    return "" if link is None else link.text
+
+def get_item_title(item) -> str:
+    title = item.find("title")
+    return "" if title is None else title.text
+
 class RSSArticle(Article, metaclass=ABCMeta):
     def __init__(self, *args, use_threads = True, **kwargs):
         super().__init__(*args, **kwargs)
@@ -44,3 +53,7 @@ class RSSArticle(Article, metaclass=ABCMeta):
     @abstractmethod
     def retrieve_content(self):
         pass
+
+    @classmethod
+    def from_item(cls, item, get_item_link = get_item_link, get_item_title = get_item_title, **kwargs) -> Article:
+        return cls(url = get_item_link(item), title = get_item_title(item), **kwargs)
