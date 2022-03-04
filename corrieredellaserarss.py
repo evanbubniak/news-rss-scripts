@@ -5,7 +5,7 @@ from get_url_soup import get_url_soup
 from bs4 import Tag
 
 def tag_contains_article_body(tag: Tag) -> bool:
-    return tag.attrs.get("id") == "content-to-read" or "gallery__content" in tag.get_attribute_list("class")
+    return tag.attrs.get("id") == "content-to-read" or "gallery__content" in tag.get_attribute_list("class") or "body-article" in tag.get_attribute_list("class")
 
 class CorriereDellaSeraArticle(RSSArticle):
     def retrieve_content(self):
