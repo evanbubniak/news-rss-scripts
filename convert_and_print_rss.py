@@ -6,12 +6,13 @@ from io import StringIO
 from tqdm import tqdm
 from sys import argv
 
+def parse_inputs(base_url, default_feed_name):
+    feed_name: str = argv[1] if len(argv) >= 2 else default_feed_name
+    article_limit: Optional[int] = int(argv[2]) if len(argv) >= 3 else 25
+    target_url = base_url + feed_name
+    return target_url, article_limit
+
 def convert_and_print_rss(base_url: str, default_feed_name: str, article_class: Type[RSSArticle], **kwargs):
-    def parse_inputs(base_url, default_feed_name):
-        feed_name: str = argv[1] if len(argv) >= 2 else default_feed_name
-        article_limit: Optional[int] = int(argv[2]) if len(argv) >= 3 else 25
-        target_url = base_url + feed_name
-        return target_url, article_limit
     target_url, article_limit = parse_inputs(base_url, default_feed_name)
     response = requests.get(target_url)
     root = fromstring(response.content)
