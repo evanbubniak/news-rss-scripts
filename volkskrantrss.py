@@ -12,10 +12,14 @@ def is_article_text(tag: Tag) -> bool:
 def convert_tag_to_text(text_tag: Tag) -> str:
     if text_tag.name in ["ul", "ol"]:
         return "</p><p>".join("- " + listitem_tag.getText() for listitem_tag in text_tag.find_all("li"))
-    elif text_tag.name == "h3" and "artstyle__title" in text_tag.get_attribute_list("class"):
+    elif text_tag.name in ["h2", "h3"] or "artstyle__title" in text_tag.get_attribute_list("class"):
         return "[ " + text_tag.getText() + " ]"
     else:
-        return text_tag.getText()
+        p_tags = text_tag.find_all("p")
+        if p_tags:
+            return "</p><p>".join(p_tag.getText() for p_tag in p_tags)
+        else:
+            return text_tag.getText()
 
 class VolkskrantArticle(RSSArticle):
     def retrieve_content(self):
