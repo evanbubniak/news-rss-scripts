@@ -1,21 +1,22 @@
 from typing import Type, Optional
-import requests
 from xml.etree.ElementTree import ElementTree, fromstring, Element
-from article import RSSArticle
+from article import RSSArticle, RSSFeed
 from io import StringIO
 from tqdm import tqdm
 from sys import argv
 
-def parse_inputs(base_url, default_feed_name):
-    feed_name: str = argv[1] if len(argv) >= 2 else default_feed_name
-    article_limit: Optional[int] = int(argv[2]) if len(argv) >= 3 else 25
-    target_url = base_url + feed_name
-    return target_url, article_limit
+DEFAULT_ARTICLE_LIMIT = 25
 
-def convert_and_print_rss(base_url: str, default_feed_name: str, article_class: Type[RSSArticle], **kwargs):
-    target_url, article_limit = parse_inputs(base_url, default_feed_name)
-    response = requests.get(target_url)
-    root = fromstring(response.content)
+def convert_and_print_rss(base_url: str, default_feed_name: str, article_class: Type[RSSArticle] = RSSArticle, feed_class: Type[RSSFeed] = RSSFeed, **kwargs):
+    feed_name: str = argv[1] if len(argv) >= 2 else default_feed_name
+    target_url = base_url + feed_name
+    feed = feed_class(target_url)
+
+    article_limit: Optional[int] = int(argv[2]) if len(argv) >= 3 else DEFAULT_ARTICLE_LIMIT
+
+    assert feed is not None, "Unable to create feed or no feed passed in."
+
+    root = fromstring(feed.retrieve_rss())
     channel = root.find("channel")
     if channel:
         items = channel.findall("item")

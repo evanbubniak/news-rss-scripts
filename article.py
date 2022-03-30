@@ -1,4 +1,5 @@
 import threading
+import requests
 from abc import ABCMeta, abstractmethod
 
 class Article:
@@ -57,3 +58,11 @@ class RSSArticle(Article, metaclass=ABCMeta):
     @classmethod
     def from_item(cls, item, get_item_link = get_item_link, get_item_title = get_item_title, **kwargs) -> Article:
         return cls(url = get_item_link(item), title = get_item_title(item), **kwargs)
+
+class RSSFeed:
+    def __init__(self, url):
+        self.url = url
+
+    def retrieve_rss(self):
+        response = requests.get(self.url)
+        return response.content
