@@ -1,3 +1,13 @@
+"query:Unread Articles:unread = \"yes\""
+"query:Dutch feeds:tags # \"nl\""
+"query:Danish feeds:tags # \"da\""
+"query:French feeds:tags # \"fr\""
+"query:German feeds:tags # \"de\""
+"query:Italian feeds:tags # \"it\""
+"query:Spanish feeds:tags # \"es\""
+"query:Chinese feeds:tags # \"zh\""
+"query:Japanese feeds:tags # \"ja\""
+"query:Russian feeds:tags # \"ru\""
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py rss/une.xml" fr
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py jeux-video/rss_full.xml" fr
 "exec:~/Documents/programming/news-rss-scripts/szrss.py https://rss.sueddeutsche.de/rss/Topthemen" de
@@ -12,3 +22,17 @@ https://rss.nhnieuws.nl/rss nl
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/top-picks.xml" ja
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/it.xml" ja
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/world.xml" ja
+https://wikinews-rss.herokuapp.com/index.php?lang=nl nl
+https://wikinews-rss.herokuapp.com/index.php?lang=de de
+https://wikinews-rss.herokuapp.com/index.php?lang=fr fr
+https://wikinews-rss.herokuapp.com/index.php?lang=es es
+https://wikinews-rss.herokuapp.com/index.php?lang=it it
+https://wikinews-rss.herokuapp.com/index.php?lang=zh zh
+https://wikinews-rss.herokuapp.com/index.php?lang=ja ja
+https://wikinews-rss.herokuapp.com/index.php?lang=ru ru
+http://www.reddit.com/r/beleggen+belgium+Belgium2+BeurspleinBets+cirkeltrek+DutchFIRE+geldzaken+ik_ihe+Klussers+LHBTI+OndersteuningsPlein+Politiek+thenetherlands.rss nl
+http://www.reddit.com/r/Denmark+dkfinance+dkpol+Fadervittigheder.rss da
+http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh
+"exec:~/Documents/programming/news-rss-scripts/nytesrss.py" es
+"exec:~/Documents/programming/news-rss-scripts/nytesrss.py section/opinion" es
+"exec:~/Documents/programming/news-rss-scripts/nytesrss.py spotlight/especial" es
