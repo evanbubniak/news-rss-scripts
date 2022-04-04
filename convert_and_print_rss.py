@@ -16,23 +16,30 @@ def convert_and_print_rss(base_url: str, default_feed_name: str, article_class: 
 
     assert feed is not None, "Unable to create feed or no feed passed in."
 
+    pref = ""
     root = fromstring(feed.retrieve_rss())
     channel = root.find("channel")
-    if channel:
-        items = channel.findall("item")
+    if not channel:
+        # Special case to handle RDF feeds, where items are children of root and which have a namespace prefix.
+        pref = "{http://purl.org/rss/1.0/}"
+        channel = root
+
+    if channel:        
+        items = channel.findall(pref + "item")
+
         if article_limit is not None:
             for item in items[article_limit:]:
                 channel.remove(item)
             items = items[:article_limit]
-        articles = [article_class.from_item(item, **kwargs) for item in items]
+        articles = [article_class.from_item(item, pref=pref, **kwargs) for item in items]
         for item, article in tqdm(zip(items, articles), total = len(items)):
-            link = item.find("link")
-            description = item.find("description")
+            link = item.find(pref + "link")
+            description = item.find(pref + "description")
             if link is not None:
                 link.text = article.get_url()
 
             if description is None:
-                description = Element("description")
+                description = Element(pref + "description")
                 item.append(description)
 
             description.text = article.get_content()

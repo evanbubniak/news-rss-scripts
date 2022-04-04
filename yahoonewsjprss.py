@@ -61,7 +61,7 @@ URL_SUFFIX = "?source=rss"
 base_url = "https://news.yahoo.co.jp/rss/"
 default_feed_name = "topics/top-picks.xml"
 
-def get_item_link(item):
+def get_item_link(item, pref):
     link = item.find("link")
     return "" if link is None else link.text[:-1*len(URL_SUFFIX)]
 
