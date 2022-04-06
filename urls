@@ -37,3 +37,4 @@ http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh
 "exec:~/Documents/programming/news-rss-scripts/nytesrss.py section/opinion" es
 "exec:~/Documents/programming/news-rss-scripts/nytesrss.py spotlight/especial" es
 "exec:~/Documents/programming/news-rss-scripts/asahirss.py asahi/newsheadlines.rdf" jp
+https://zenn.dev/topics/%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA/feed jp
