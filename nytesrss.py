@@ -48,8 +48,14 @@ def retrieve_es_rss(url):
                         title_tag = article.find("h2")
                         title = title_tag.getText() if title_tag else "title missing"
                         link = "https://www.nytimes.com" + link_tag.attrs["href"]
-                        date_text = "/".join(link.split("/")[4:7])
-                        date = dt.strptime(date_text, '%Y/%m/%d')
+                        split = link.split("/")
+                        for i in range(len(split)-3):
+                            try:
+                                date_text = "/".join(split[i:i+3])
+                                date = dt.strptime(date_text, '%Y/%m/%d')
+                                break
+                            except:
+                                pass
                         pubDate = date.strftime("%a, %d %b %Y %H:%M:%S %z")
                         description = article.find("p").getText()
 
