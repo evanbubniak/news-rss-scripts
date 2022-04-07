@@ -20,16 +20,16 @@ https://rss.nhnieuws.nl/rss nl
 "exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8662" "~過去24小時" zh
 "exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8663" "~政經角力" zh
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/top-picks.xml" ja
-"exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/it.xml" ja
-"exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/world.xml" ja
+# "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/it.xml" ja
+# "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/world.xml" ja
 https://wikinews-rss.herokuapp.com/index.php?lang=nl nl
 https://wikinews-rss.herokuapp.com/index.php?lang=de de
 https://wikinews-rss.herokuapp.com/index.php?lang=fr fr
 https://wikinews-rss.herokuapp.com/index.php?lang=es es
 https://wikinews-rss.herokuapp.com/index.php?lang=it it
-https://wikinews-rss.herokuapp.com/index.php?lang=zh zh
-https://wikinews-rss.herokuapp.com/index.php?lang=ja ja
-https://wikinews-rss.herokuapp.com/index.php?lang=ru ru
+# https://wikinews-rss.herokuapp.com/index.php?lang=zh zh
+# https://wikinews-rss.herokuapp.com/index.php?lang=ja ja
+# https://wikinews-rss.herokuapp.com/index.php?lang=ru ru
 http://www.reddit.com/r/beleggen+belgium+Belgium2+BeurspleinBets+cirkeltrek+DutchFIRE+geldzaken+ik_ihe+Klussers+LHBTI+OndersteuningsPlein+Politiek+thenetherlands.rss nl
 http://www.reddit.com/r/Denmark+dkfinance+dkpol+Fadervittigheder.rss da
 http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh
