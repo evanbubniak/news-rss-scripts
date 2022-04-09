@@ -6,7 +6,7 @@ from bs4 import NavigableString, Tag
 
 def convert_tag_to_text(text_tag: Tag) -> str:
     if isinstance(text_tag, NavigableString):
-        return text_tag.getText()
+        return text_tag
     else:
         return text_tag.decode_contents()
     # elif text_tag.name in ["ul", "ol"]:
