@@ -34,4 +34,4 @@ class ZennDevArticle(RSSArticle):
 base_url = ""
 default_feed_name: str = "https://zenn.dev/topics/%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA/feed"
 
-convert_and_print_rss(base_url, default_feed_name, ZennDevArticle, use_threads=False)
+convert_and_print_rss(base_url, default_feed_name, ZennDevArticle)
