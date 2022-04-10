@@ -8,6 +8,9 @@
 "query:Chinese feeds:tags # \"zh\""
 "query:Japanese feeds:tags # \"ja\""
 "query:Russian feeds:tags # \"ru\""
+"query:Reddit:tags # \"reddit\""
+"query:MSN:tags # \"msn\""
+"query:Wikinews:tags # \"wikinews\""
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py rss/une.xml" fr
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py jeux-video/rss_full.xml" fr
 "exec:~/Documents/programming/news-rss-scripts/szrss.py https://rss.sueddeutsche.de/rss/Topthemen" de
