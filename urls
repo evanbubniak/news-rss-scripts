@@ -45,8 +45,10 @@ http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh reddit
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py de-de/" de msn
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py it-it/" it msn
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py ja-jp/" ja msn
-"exec:~/Documents/programming/news-rss-scripts/msnrss.py ko-kr/" ko msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py ko-kr/" ko
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py zh-tw/" zh msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py zh-hk/" zh msn
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py da-dk/" da msn
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py nl-nl/" nl msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py pl-pl/" pl
 
