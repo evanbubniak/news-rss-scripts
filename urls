@@ -51,4 +51,5 @@ http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh reddit
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py da-dk/" da msn
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py nl-nl/" nl msn
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py pl-pl/" pl
+"exec:~/Documents/programming/news-rss-scripts/crossingtwrss.py" zh
 
