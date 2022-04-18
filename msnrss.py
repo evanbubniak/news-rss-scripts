@@ -11,6 +11,8 @@ class MSNArticle(RSSArticle):
                 self.url = self.url.replace(url_suffix, "")
         soup = get_url_soup(self.url)
         body_tag = soup.find("div", class_="articlecontent")
+        if not body_tag:
+            body_tag = soup.find("article").find("section", class_="articlebody")
         if body_tag:
             text = "<p>" + "</p><p>".join([text_tag.getText() for text_tag in body_tag.find_all("p")]) + "</p>"
         else:
