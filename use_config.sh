@@ -1,2 +1,2 @@
 #! /bin/bash
-ln -s ${pwd}/config ~/.newsboat/config
+ln -s "$(pwd)/config" ~/.newsboat/config

@@ -16,13 +16,10 @@ def convert_tag_to_text(tag: Tag) -> str:
 class DRNewsArticle(RSSArticle):
     def retrieve_content(self):
         soup = get_url_soup(self.url)
-        
-        if "/seneste/" in self.url or "/seneste-sport/" in self.url:
-            body_classname = "hydra-latest-news-page-short-news__body"
-        else:
-            body_classname = "dre-article-body"
-        body_tag = soup.find("div", class_=body_classname)
-
+        for body_tag_classname in ["dre-article-body", "hydra-latest-news-page-short-news__body"]:
+            body_tag = soup.find("div", class_=body_tag_classname)
+            if body_tag:
+                break
         if body_tag:
             text = "<p>" + "</p><p>".join([convert_tag_to_text(text_tag) for text_tag in body_tag.findChildren(recursive=False)]) + "</p>"
         else:

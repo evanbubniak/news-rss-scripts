@@ -1,3 +1,16 @@
+"query:Unread Articles:unread = \"yes\""
+"query:Dutch feeds:tags # \"nl\""
+"query:Danish feeds:tags # \"da\""
+"query:French feeds:tags # \"fr\""
+"query:German feeds:tags # \"de\""
+"query:Italian feeds:tags # \"it\""
+"query:Spanish feeds:tags # \"es\""
+"query:Chinese feeds:tags # \"zh\""
+"query:Japanese feeds:tags # \"ja\""
+"query:Russian feeds:tags # \"ru\""
+"query:Reddit:tags # \"reddit\""
+"query:MSN:tags # \"msn\""
+"query:Wikinews:tags # \"wikinews\""
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py rss/une.xml" fr
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py jeux-video/rss_full.xml" fr
 "exec:~/Documents/programming/news-rss-scripts/szrss.py https://rss.sueddeutsche.de/rss/Topthemen" de
@@ -10,5 +23,33 @@ https://rss.nhnieuws.nl/rss nl
 "exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8662" "~過去24小時" zh
 "exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8663" "~政經角力" zh
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/top-picks.xml" ja
-"exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/it.xml" ja
-"exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/world.xml" ja
+# "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/it.xml" ja
+# "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/world.xml" ja
+https://wikinews-rss.herokuapp.com/index.php?lang=nl nl wikinews
+https://wikinews-rss.herokuapp.com/index.php?lang=de de wikinews
+https://wikinews-rss.herokuapp.com/index.php?lang=fr fr wikinews
+https://wikinews-rss.herokuapp.com/index.php?lang=es es wikinews
+https://wikinews-rss.herokuapp.com/index.php?lang=it it wikinews
+# https://wikinews-rss.herokuapp.com/index.php?lang=zh zh wikinews
+# https://wikinews-rss.herokuapp.com/index.php?lang=ja ja wikinews
+# https://wikinews-rss.herokuapp.com/index.php?lang=ru ru wikinews
+http://www.reddit.com/r/beleggen+belgium+Belgium2+BeurspleinBets+cirkeltrek+DutchFIRE+geldzaken+ik_ihe+Klussers+LHBTI+OndersteuningsPlein+Politiek+thenetherlands.rss nl reddit
+http://www.reddit.com/r/Denmark+dkfinance+dkpol+Fadervittigheder.rss da reddit
+http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh reddit
+"exec:~/Documents/programming/news-rss-scripts/nytesrss.py" es nyt
+"exec:~/Documents/programming/news-rss-scripts/nytesrss.py section/opinion" es nyt
+"exec:~/Documents/programming/news-rss-scripts/nytesrss.py spotlight/especial" es nyt
+"exec:~/Documents/programming/news-rss-scripts/asahirss.py asahi/newsheadlines.rdf" jp
+"exec:~/Documents/programming/news-rss-scripts/zenndevrss.py https://zenn.dev/topics/%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA/feed" jp
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py fr-fr/" fr msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py de-de/" de msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py it-it/" it msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py ja-jp/" ja msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py ko-kr/" ko
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py zh-tw/" zh msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py zh-hk/" zh msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py da-dk/" da msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py nl-nl/" nl msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py pl-pl/" pl
+"exec:~/Documents/programming/news-rss-scripts/crossingtwrss.py" zh
+
