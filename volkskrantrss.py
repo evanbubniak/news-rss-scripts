@@ -23,7 +23,7 @@ def convert_tag_to_text(text_tag: Tag) -> str:
 
 class VolkskrantArticle(RSSArticle):
     def retrieve_content(self):
-        soup = get_url_soup(self.url)
+        soup = get_url_soup(self.url, headers=None)
         body_tag = soup.find("article")
         if body_tag:
             main_texts = [convert_tag_to_text(text_tag) for text_tag in body_tag.find_all(is_article_text)]
