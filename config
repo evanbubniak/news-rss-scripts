@@ -8,4 +8,5 @@ bind-key G end article
 bind-key ENTER quit article
 bind-key LEFT quit
 bind-key RIGHT open
+bind-key RIGHT next-unread article
 browser "lynx %u"
