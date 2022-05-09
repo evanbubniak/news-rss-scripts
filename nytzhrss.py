@@ -3,13 +3,13 @@ from io import StringIO
 from typing import Optional
 from article import RSSArticle, RSSFeed
 from convert_and_print_rss import convert_and_print_rss
-from get_url_soup import get_url_soup
+from get_url_soup import get_requests_html_soup
 from bs4 import Tag
 from datetime import datetime as dt
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 
 def retrieve_zh_rss(url):
-    main_page = get_url_soup(url)
+    main_page = get_requests_html_soup(url)
     if "zh-hant" in url:
         title = "紐約時報中文網"
     else:
@@ -84,7 +84,7 @@ class NYTZHRSSFeed(RSSFeed):
 
 class NYTZHArticle(RSSArticle):
     def retrieve_content(self):
-        soup = get_url_soup(self.url)
+        soup = get_requests_html_soup(self.url)
         body_tag = soup.find("section", class_= "article-body")
         if body_tag:
             main_texts = [text_tag.decode_contents() for text_tag in body_tag.find_all("div", class_="article-paragraph")]
@@ -94,4 +94,4 @@ class NYTZHArticle(RSSArticle):
         self.content = text.replace("\n", "")
 
 default_zh = "https://cn.nytimes.com/"
-convert_and_print_rss(default_zh, "zh-hant/", NYTZHArticle, NYTZHRSSFeed)
+convert_and_print_rss(default_zh, "zh-hant/", NYTZHArticle, NYTZHRSSFeed, use_threads=False)

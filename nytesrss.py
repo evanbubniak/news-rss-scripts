@@ -3,14 +3,14 @@ from io import StringIO
 from typing import Optional
 from article import RSSArticle, RSSFeed
 from convert_and_print_rss import convert_and_print_rss
-from get_url_soup import get_url_soup
+from get_url_soup import get_requests_html_soup
 from bs4 import Tag
 from datetime import datetime as dt
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 
 
 def retrieve_es_rss(url):
-    main_page = get_url_soup(url)
+    main_page = get_requests_html_soup(url)
     title_tag = main_page.find("h1")
     if title_tag:
         title = "NYT Es: " + title_tag.getText()
@@ -88,7 +88,7 @@ class NYTESRSSFeed(RSSFeed):
 
 class NYTESArticle(RSSArticle):
     def retrieve_content(self):
-        soup = get_url_soup(self.url)
+        soup = get_requests_html_soup(self.url)
         body_tag = soup.find("section", attrs={"name": "articleBody"})
         if body_tag:
             main_texts = [text_tag.getText() for text_tag in body_tag.find_all("p")]
@@ -98,4 +98,4 @@ class NYTESArticle(RSSArticle):
         self.content = text.replace("\n", "")
 
 default_es = "https://www.nytimes.com/es/"
-convert_and_print_rss(default_es, "", NYTESArticle, NYTESRSSFeed)
+convert_and_print_rss(default_es, "", NYTESArticle, NYTESRSSFeed, use_threads=False)
