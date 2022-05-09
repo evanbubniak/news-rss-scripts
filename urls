@@ -12,15 +12,17 @@
 "query:MSN:tags # \"msn\""
 "query:The New York Times:tags # \"nyt\""
 "query:Wikinews:tags # \"wikinews\""
-"exec:~/Documents/programming/news-rss-scripts/lemonderss.py rss/une.xml" ! fr
+"exec:~/Documents/programming/news-rss-scripts/lemonderss.py rss/une.xml" fr "~Le Monde"
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py jeux-video/rss_full.xml" ! fr
 "exec:~/Documents/programming/news-rss-scripts/szrss.py https://rss.sueddeutsche.de/rss/Topthemen" ! de
-"exec:~/Documents/programming/news-rss-scripts/dwrss.py xml/rss-de-all" ! de
-"exec:~/Documents/programming/news-rss-scripts/corrieredellaserarss.py http://xml2.corriereobjects.it/rss/homepage.xml" ! it
+"exec:~/Documents/programming/news-rss-scripts/dwrss.py xml/rss-de-all" de "~Deutsche Welle"
+"exec:~/Documents/programming/news-rss-scripts/corrieredellaserarss.py http://xml2.corriereobjects.it/rss/homepage.xml" it "~Corriere della Sera"
 https://rss.nhnieuws.nl/rss ! nl
-"exec:~/Documents/programming/news-rss-scripts/volkskrantrss.py nieuws-achtergrond/rss.xml" ! nl
-"exec:~/Documents/programming/news-rss-scripts/drnewsrss.py senestenyt" ! da
-"exec:~/Documents/programming/news-rss-scripts/drnewsrss.py politik" ! da
+"exec:~/Documents/programming/news-rss-scripts/volkskrantrss.py nieuws-achtergrond/rss.xml" nl "~Volkskrant"
+"exec:~/Documents/programming/news-rss-scripts/drnewsrss.py senestenyt" da "~DR | Seneste nyt"
+"exec:~/Documents/programming/news-rss-scripts/drnewsrss.py politik" da dr "~DR | Politik"
+"exec:~/Documents/programming/news-rss-scripts/drnewsrss.py indland" da dr "~DR | Indland"
+"exec:~/Documents/programming/news-rss-scripts/drnewsrss.py udland" da dr "~DR | Udland"
 "exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8662" ! "~過去24小時" zh
 "exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8663" ! "~政經角力" zh
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/top-picks.xml" ! ja
@@ -60,4 +62,9 @@ http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh reddit "~reddit.zh"
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py es-es/" ! es msn
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py es-us/" ! es msn
 "exec:~/Documents/programming/news-rss-scripts/crossingtwrss.py" zh
-
+https://www.vice.com/it/rss/ it
+https://www.vice.com/fr/rss/ fr
+https://www.vice.com/de/rss/ de
+https://www.vice.com/nl/rss/ nl
+https://www.vice.com/ja/rss/ ja
+https://www.vice.com/es/rss/ es
