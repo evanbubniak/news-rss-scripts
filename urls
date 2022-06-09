@@ -39,7 +39,7 @@ https://wikinews-rss.herokuapp.com/index.php?lang=it ! it wikinews
 http://www.reddit.com/r/besoindeparler+EcouteCa+EnculerLesVoitures+entraideinformatique+france+joyeuxfrerots+okcopainattard+pedale+PodcastFrancais+Wallonia.rss fr reddit "~reddit.fr"
 http://www.reddit.com/r/asozialesnetzwerk+Asterix_iel+Augenbleiche+Austria+BinIchDasArschloch+buecher+csbundestag+dach_outdoor+de+de_IAmA+de_IT+de_podcasts+de_writingprompts+Dokumentationen+einfach_posten+Fahrrad+Finanzen+FragReddit+germantrans+Geschichte+GeschichtsMaimais+HeuteLernteIch+ichbin40undlustig+LTB_iel+mauerstrassenwetten+OkBrudiMongo+satire_de_en+selbermachen+spabiergang+VTbetroffene+wasletztepreis+Wissenschaft.rss de reddit "~reddit.de"
 http://www.reddit.com/r/BancaDelMeme+incipit+ItaliaPersonalFinance+italy+italygames+ItalyInformatica+ItalyMotori+memesITA+Ratorix.rss it reddit "~reddit.it"
-http://www.reddit.com/r/argentina+es+mexico+vzla.rss es reddit "~reddit.es"
+http://www.reddit.com/r/argentina+chile+es+mexico+PERU+vzla.rss es reddit "~reddit.es"
 http://www.reddit.com/r/beleggen+belgium+Belgium2+BeurspleinBets+cirkeltrek+DutchFIRE+geldzaken+ik_ihe+Klussers+kutautos+LHBTI+OndersteuningsPlein+Politiek+thenetherlands.rss nl reddit "~reddit.nl"
 http://www.reddit.com/r/Denmark+dkfinance+dkpol+Fadervittigheder.rss da reddit "~reddit.da"
 http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh reddit "~reddit.zh"
@@ -56,7 +56,7 @@ http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh reddit "~reddit.zh"
 # "exec:~/Documents/programming/news-rss-scripts/msnrss.py ko-kr/" ! ko
 # "exec:~/Documents/programming/news-rss-scripts/msnrss.py zh-tw/" ! zh msn
 # "exec:~/Documents/programming/news-rss-scripts/msnrss.py zh-hk/" ! zh msn
-"exec:~/Documents/programming/news-rss-scripts/msnrss.py da-dk/" ! da msn
+"exec:~/Documents/programming/news-rss-scripts/msnrss.py da-dk/" da msn "~MSN Danmark"
 # "exec:~/Documents/programming/news-rss-scripts/msnrss.py nl-nl/" ! nl msn
 # "exec:~/Documents/programming/news-rss-scripts/msnrss.py pl-pl/" ! pl
 "exec:~/Documents/programming/news-rss-scripts/msnrss.py es-es/" ! es msn
