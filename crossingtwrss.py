@@ -6,7 +6,7 @@ from get_url_soup import get_requests_html_soup
 class CrossingTWArticle(RSSArticle):
     def retrieve_content(self):
         soup = get_requests_html_soup(self.url)
-        body_tag = soup.find("article").find("div", class_="trackSection")
+        body_tag = soup.find("article").find("div", class_="article-box__main")
         if body_tag:
             text = "<p>" + "</p><p>".join([text_tag.getText() for text_tag in body_tag.find_all(["p", "blockquote"])]) + "</p>"
         else:
