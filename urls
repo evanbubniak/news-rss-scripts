@@ -1,4 +1,3 @@
-"query:Unread minus MSN:unread = \"yes\" and tags !# \"msn\""
 "query:Unread Articles:unread = \"yes\""
 "query:Dutch feeds:tags # \"nl\""
 "query:Danish feeds:tags # \"da\""
@@ -10,7 +9,6 @@
 "query:Japanese feeds:tags # \"ja\""
 "query:Russian feeds:tags # \"ru\""
 "query:Reddit:tags # \"reddit\""
-"query:MSN:tags # \"msn\""
 "query:The New York Times:tags # \"nyt\""
 "query:Wikinews:tags # \"wikinews\""
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py rss/une.xml" fr "~Le Monde"
@@ -49,20 +47,9 @@ http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh reddit "~reddit.zh"
 "exec:~/Documents/programming/news-rss-scripts/nytesrss.py spotlight/especial" es nyt "~NYT Es: Especial"
 "exec:~/Documents/programming/news-rss-scripts/nytzhrss.py zh-hant/" zh nyt
 "exec:~/Documents/programming/news-rss-scripts/asahirss.py asahi/newsheadlines.rdf" jp
-"exec:~/Documents/programming/news-rss-scripts/zenndevrss.py https://zenn.dev/topics/%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA/feed" ! jp
-# "exec:~/Documents/programming/news-rss-scripts/msnrss.py fr-fr/" ! fr msn
-# "exec:~/Documents/programming/news-rss-scripts/msnrss.py de-de/" ! de msn
-# "exec:~/Documents/programming/news-rss-scripts/msnrss.py it-it/" ! it msn
-# "exec:~/Documents/programming/news-rss-scripts/msnrss.py ja-jp/" ! ja msn
-# "exec:~/Documents/programming/news-rss-scripts/msnrss.py ko-kr/" ! ko msn
-# "exec:~/Documents/programming/news-rss-scripts/msnrss.py zh-tw/" ! zh msn
-# "exec:~/Documents/programming/news-rss-scripts/msnrss.py zh-hk/" ! zh msn
-"exec:~/Documents/programming/news-rss-scripts/msnrss.py da-dk/" da msn "~MSN Danmark"
-# "exec:~/Documents/programming/news-rss-scripts/msnrss.py nl-nl/" ! nl msn
-# "exec:~/Documents/programming/news-rss-scripts/msnrss.py pl-pl/" ! pl msn
-"exec:~/Documents/programming/news-rss-scripts/msnrss.py es-es/" ! es msn
-"exec:~/Documents/programming/news-rss-scripts/msnrss.py es-us/" ! es msn
+"exec:~/Documents/programming/news-rss-scripts/zenndevrss.py https://zenn.dev/topics/%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA/feed" jp
 https://crossing.cw.com.tw/rss zh
+https://chinese.engadget.com/rss.xml zh
 https://www.vice.com/it/rss/ it
 https://www.vice.com/fr/rss/ fr
 https://www.vice.com/de/rss/ de
