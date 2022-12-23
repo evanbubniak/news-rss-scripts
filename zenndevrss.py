@@ -23,7 +23,7 @@ def convert_tag_to_text(text_tag: Tag) -> str:
 class ZennDevArticle(RSSArticle):
     def retrieve_content(self):
         soup = get_url_soup(self.url)
-        body_tag = soup.find(id="toc-target-content").find(class_="BodyContent_anchorToHeadings__Vl0_u")
+        body_tag = soup.find("article").find(class_="BodyContent_anchorToHeadings__Vl0_u")
         if body_tag:
             main_texts = [convert_tag_to_text(tag) for tag in body_tag.children]
             text = "<p>" + "</p><p>".join(main_texts) + "</p>"
@@ -34,4 +34,4 @@ class ZennDevArticle(RSSArticle):
 base_url = ""
 default_feed_name: str = "https://zenn.dev/topics/%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA/feed"
 
-convert_and_print_rss(base_url, default_feed_name, ZennDevArticle)
+convert_and_print_rss(base_url, default_feed_name, ZennDevArticle, use_threads=False)
