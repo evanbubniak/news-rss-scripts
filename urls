@@ -1,19 +1,20 @@
 "query:Unread Articles:unread = \"yes\""
-"query:Dutch feeds:tags # \"nl\""
-"query:Danish feeds:tags # \"da\""
-"query:French feeds:tags # \"fr\""
-"query:German feeds:tags # \"de\""
-"query:Italian feeds:tags # \"it\""
-"query:Spanish feeds:tags # \"es\""
-"query:Chinese feeds:tags # \"zh\""
-"query:Japanese feeds:tags # \"ja\""
-"query:Russian feeds:tags # \"ru\""
-"query:Reddit:tags # \"reddit\""
-"query:The New York Times:tags # \"nyt\""
-"query:Wikinews:tags # \"wikinews\""
+"query:nl:tags # \"nl\"" main
+"query:da:tags # \"da\"" main
+"query:fr:tags # \"fr\"" main
+"query:de:tags # \"de\"" main
+"query:it:tags # \"it\"" main
+"query:es:tags # \"es\"" main
+"query:zh:tags # \"zh\"" main
+"query:ja:tags # \"ja\"" main
+"query:ru:tags # \"ru\"" main
+"query:asia:tags # \"zh\" or tags # \"ja\" or tags # \"ko\"" main
+"query:reddit:tags # \"reddit\"" main
+"query:nyt:tags # \"nyt\"" main
+"query:wikinews:tags # \"wikinews\"" main
 "exec:~/Documents/programming/news-rss-scripts/lemonderss.py rss/une.xml" fr "~Le Monde"
-"exec:~/Documents/programming/news-rss-scripts/lemonderss.py jeux-video/rss_full.xml" ! fr
-"exec:~/Documents/programming/news-rss-scripts/szrss.py https://rss.sueddeutsche.de/rss/Topthemen" ! de
+"exec:~/Documents/programming/news-rss-scripts/lemonderss.py jeux-video/rss_full.xml" fr
+"exec:~/Documents/programming/news-rss-scripts/szrss.py https://rss.sueddeutsche.de/rss/Topthemen" de
 "exec:~/Documents/programming/news-rss-scripts/dwrss.py xml/rss-de-all" de "~Deutsche Welle"
 "exec:~/Documents/programming/news-rss-scripts/corrieredellaserarss.py http://xml2.corriereobjects.it/rss/homepage.xml" it "~Corriere della Sera"
 https://rss.nhnieuws.nl/rss ! nl
@@ -22,24 +23,16 @@ https://rss.nhnieuws.nl/rss ! nl
 "exec:~/Documents/programming/news-rss-scripts/drnewsrss.py politik" da dr "~DR | Politik"
 "exec:~/Documents/programming/news-rss-scripts/drnewsrss.py indland" da dr "~DR | Indland"
 "exec:~/Documents/programming/news-rss-scripts/drnewsrss.py udland" da dr "~DR | Udland"
-"exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8662" ! "~過去24小時" zh
-"exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8663" ! "~政經角力" zh
+"exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8662" "~過去24小時" zh
+"exec:~/Documents/programming/news-rss-scripts/udnrss.py https://global.udn.com/rss/news/1020/8663" "~政經角力" zh
 "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/top-picks.xml" ! ja
-# "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/it.xml" ! ja
-# "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/world.xml" ! ja
-https://wikinews-rss.herokuapp.com/index.php?lang=nl ! nl wikinews
-https://wikinews-rss.herokuapp.com/index.php?lang=de ! de wikinews
-https://wikinews-rss.herokuapp.com/index.php?lang=fr ! fr wikinews
-https://wikinews-rss.herokuapp.com/index.php?lang=es ! es wikinews
-https://wikinews-rss.herokuapp.com/index.php?lang=it ! it wikinews
-# https://wikinews-rss.herokuapp.com/index.php?lang=zh ! zh wikinews
-# https://wikinews-rss.herokuapp.com/index.php?lang=ja ! ja wikinews
-# https://wikinews-rss.herokuapp.com/index.php?lang=ru ru wikinews
-http://www.reddit.com/r/besoindeparler+EcouteCa+EnculerLesVoitures+entraideinformatique+france+joyeuxfrerots+okcopainattard+pedale+PodcastFrancais+Wallonia.rss fr reddit "~reddit.fr"
-http://www.reddit.com/r/asozialesnetzwerk+Asterix_iel+Augenbleiche+Austria+BinIchDasArschloch+buecher+csbundestag+dach_outdoor+de+de_IAmA+de_IT+de_podcasts+de_writingprompts+Dokumentationen+einfach_posten+Fahrrad+Finanzen+FragReddit+germantrans+Geschichte+GeschichtsMaimais+HeuteLernteIch+ichbin40undlustig+LTB_iel+mauerstrassenwetten+OkBrudiMongo+satire_de_en+selbermachen+spabiergang+VTbetroffene+wasletztepreis+Wissenschaft.rss de reddit "~reddit.de"
-http://www.reddit.com/r/BancaDelMeme+incipit+ItaliaPersonalFinance+italy+italygames+ItalyInformatica+ItalyMotori+memesITA+Ratorix.rss it reddit "~reddit.it"
+# "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/it.xml" ja
+# "exec:~/Documents/programming/news-rss-scripts/yahoonewsjprss.py topics/world.xml" ja
+http://www.reddit.com/r/EcouteCa+EnculerLesVoitures+entraideinformatique+france+pedale+PodcastFrancais+Wallonia.rss fr reddit "~reddit.fr"
+http://www.reddit.com/r/Asterix_iel+Augenbleiche+Austria+BinIchDasArschloch+buecher+dach_outdoor+de+de_IAmA+de_IT+de_podcasts+de_writingprompts+Dokumentationen+einfach_posten+Fahrrad+Finanzen+FragReddit+Geschichte+GeschichtsMaimais+HeuteLernteIch+mauerstrassenwetten+selbermachen+spabiergang+Wissenschaft.rss de reddit "~reddit.de"
+http://www.reddit.com/r/BancaDelMeme+incipit+ItaliaPersonalFinance+italy+italygames+ItalyInformatica+ItalyMotori+memesITA.rss it reddit "~reddit.it"
 http://www.reddit.com/r/argentina+chile+es+mexico+PERU+vzla.rss es reddit "~reddit.es"
-http://www.reddit.com/r/beleggen+belgium+Belgium2+BeurspleinBets+cirkeltrek+DutchFIRE+geldzaken+ik_ihe+Klussers+kutautos+LHBTI+OndersteuningsPlein+Politiek+thenetherlands.rss nl reddit "~reddit.nl"
+http://www.reddit.com/r/beleggen+belgium+BeurspleinBets+cirkeltrek+DutchFIRE+geldzaken+ik_ihe+Klussers+kutautos+OndersteuningsPlein+Politiek+thenetherlands.rss nl reddit "~reddit.nl"
 http://www.reddit.com/r/Denmark+dkfinance+dkpol+Fadervittigheder.rss da reddit "~reddit.da"
 http://www.reddit.com/r/China_irl+Chinatown_irl.rss zh reddit "~reddit.zh"
 "exec:~/Documents/programming/news-rss-scripts/nytesrss.py" es nyt
